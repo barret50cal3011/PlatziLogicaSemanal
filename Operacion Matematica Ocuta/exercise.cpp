@@ -1,10 +1,5 @@
 #include <iostream>
 
-int solucion_asm(int num1, int num2){
-    int x = 2;
-    asm("");
-}
-
 int solucion(int num1, int num2){
     int sum = num1 + num2;
     int sub = num1 - num2;
@@ -22,6 +17,9 @@ int main(){
 
     int res[5];
     for(int i = 0; i < sizeof(res)/sizeof(int); i++){
-        res[i] = solucion_asm(num1_test[i], num2_test[i]);
+        res[i] = solucion(num1_test[i], num2_test[i]);
+
+        printf("num1: %d num2: %d\n", num1_test[i], num2_test[i]);
+        printf("res: %d \n\n", res[i]);
     }
 }
